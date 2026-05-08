@@ -1,6 +1,7 @@
 import axios from "axios";
 import type { Notification } from "../types/notification.types.js";
-import { log } from "../../../logging_middleware/index.js";
+import { log } from "../../../logging_middleware/index.ts";
+// import { log } from "../../../logging_middleware/index.ts";
 
 export const fetchNotifications = async () => {
   const token = process.env.EVALUATION_SERVICE_BEARER_TOKEN;

@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 import { fetchNotifications } from "../services/notification.service.js";
 import { getPriority } from "../utils/priority.utils.js";
-import { log } from "../../../logging_middleware/index.js";
+import { log } from "../../../logging_middleware/index.ts";
 
 
 export const getNotifications = async (

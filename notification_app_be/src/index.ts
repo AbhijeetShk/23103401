@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 
 import notificationRoutes from "./routes/notification.routes.js";
-import { log } from "../../logging_middleware/index.js";
+import { log } from "../../logging_middleware/index.ts";
 
 const app = express();
 
