@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import NotificationCard from "./NotificationCard";
 import { fetchNotifications } from "../services/notification";
+import { log } from "../../../logging_middleware/index.js";
 
 type Props = {
   type: string;
@@ -19,7 +20,13 @@ const NotificationList = ({ type }: Props) => {
       const data = await fetchNotifications(type, page);
       setNotifications(data.notifications || []);
     } catch (error) {
-      console.log(error);
+      await log(
+        "frontend",
+        "error",
+        "component",
+        `NotificationList failed to load notifications: ${error instanceof Error ? error.message : String(error)}`
+      );
+      console.error(error);
     }
 
     setLoading(false);

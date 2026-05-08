@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
 import { fetchNotifications } from "../services/notification.service.js";
 import { getPriority } from "../utils/priority.utils.js";
+import { log } from "../../../logging_middleware/index.js";
 
 
 export const getNotifications = async (
@@ -8,6 +9,7 @@ export const getNotifications = async (
   res: Response
 ) => {
   try {
+    await log("backend", "info", "route", "Received request for notifications");
     const notifications = await fetchNotifications();
 
     const sortedNotifications = notifications
@@ -24,6 +26,12 @@ export const getNotifications = async (
       notifications: sortedNotifications,
     });
   } catch (error) {
+    await log(
+      "backend",
+      "error",
+      "route",
+      `Notifications fetch failed: ${error instanceof Error ? error.message : String(error)}`
+    );
     return res.status(500).json({
       success: false,
       message: "Failed to fetch notifications",
