@@ -1,6 +1,7 @@
 # Stage 1
-
-
+![alt text](image-1.png)
+![alt text](image-2.png)
+I was facing issues with the ip address. It wasnt getting resolved ive attached the screenshots for it. Hope it doesnt affects my submission
 ## Core Actions
 
 Before writing a single endpoint, I thought about what actually needs to happen from both the user's perspective and the system's perspective.
