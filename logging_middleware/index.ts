@@ -122,3 +122,12 @@ export const log = async (
 //     "clientID": "01b57342-c5a0-4b55-97d8-79ac8966a50f",
 //     "clientSecret": "wNfDhNtXahXvTpxf"
 // }
+
+// {
+//     "email": "abhijeetshukla.id@gmail.com",
+//     "name": "Abhijeet Shukla",
+//     "rollNo": "23103401",
+//     "accessCode": "MdprhE",
+//     "clientID": "01b57342-c5a0-4b55-97d8-79ac8966a50f",
+// "clientSecret": "wNfDhNtXahXvTpxf"
+// }

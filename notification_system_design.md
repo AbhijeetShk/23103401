@@ -642,3 +642,40 @@ This approach is much better because:
 
 Extra improvements can include:
 email rate limiting, autoscaling workers, dashboard for failed jobs, retry monitoring
+
+# Stage 6
+
+For this stage, I implemented a simple Priority Notification Inbox using Express.js and TypeScript.
+
+The notifications are fetched from the provided API and then sorted based on priority. Only the top 10 notifications are returned.
+
+Priority is calculated using:
+- notification type
+- recency
+- keywords present in the message
+
+Priority order used:
+
+```txt
+Placement > Result > Event
+Extra priority is also added for keywords like:
+
+hiring
+review
+placement
+
+Recent notifications are given higher priority compared to older ones.
+
+After fetching notifications:
+
+priority score is calculated
+notifications are sorted in descending order
+top 10 notifications are returned using .slice(0, 10)
+
+To maintain the top 10 efficiently when new notifications arrive, the notifications are dynamically sorted every time the API is called. 
+
+In larger systems, this can later be optimized using:
+
+priority queues
+Redis caching
+databases
