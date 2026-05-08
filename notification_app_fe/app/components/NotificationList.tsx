@@ -1,5 +1,7 @@
 "use client";
+import { useEffect, useState } from "react";
 import NotificationCard from "./NotificationCard";
+import { fetchNotifications } from "../services/notification";
 
 type Props = {
   type: string;
