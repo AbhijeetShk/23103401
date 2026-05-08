@@ -100,7 +100,7 @@ export const log = async (
             {
                 headers: {
                     'Content-Type': 'application/json',
-                    // Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${process.env.token}`
                 },
                 timeout: 10000,
             }

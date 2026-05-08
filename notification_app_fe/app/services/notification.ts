@@ -1,7 +1,7 @@
 import axios from "axios";
-import { log } from "../../../logging_middleware/index.js";
+import { log } from "../../../logging_middleware/index.ts";
 
-const BASE_URL = "http://4.224.186.213/evaluation-service";
+const BASE_URL = "http://localhost:3000";
 
 export const fetchNotifications = async (
   type: string,

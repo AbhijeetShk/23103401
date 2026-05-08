@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import NotificationCard from "./NotificationCard";
 import { fetchNotifications } from "../services/notification";
-import { log } from "../../../logging_middleware/index.js";
+import { log } from "../../../logging_middleware/index.ts";
 
 type Props = {
   type: string;
